@@ -16,18 +16,18 @@ public class UserServiceImpl implements UserService {
     private final UserMapper mapper;
 
     @Override
-    public UserDto findUser(Long id) {//todo add validation
+    public UserDto findUser(Long id) {
         return repository.findById(id)
             .map(mapper::userToUserDto)
-            .orElseThrow(() -> new RuntimeException("User not found.")); //todo custom exception
+            .orElseThrow(() -> new RuntimeException("User not found."));
     }
 
     @Override
-    public UserDto saveUser(UserDto dto) {//todo add validation
+    public UserDto saveUser(UserDto dto) {
         if (Objects.isNull(dto)) {
-            throw new RuntimeException("Trying to save 'null'."); //todo custom exception
+            throw new RuntimeException("Trying to save 'null'.");
         }
 
-        return mapper.userToUserDto(repository.save(mapper.userDtoToUser(dto))); //todo refactor
+        return mapper.userToUserDto(repository.save(mapper.userDtoToUser(dto)));
     }
 }

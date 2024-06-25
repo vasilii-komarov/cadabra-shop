@@ -13,9 +13,9 @@ public class JobCompletionNotificationListener implements JobExecutionListener {
     @Override
     public void afterJob(JobExecution jobExecution) {
         if(jobExecution.getStatus() == BatchStatus.COMPLETED) {
-            log.info("JOB FINISHED! jobId: {}, jobExecutionId: {}",
+            log.debug("JOB FINISHED! jobId: {}, jobExecutionId: {}",
                 jobExecution.getJobId(), jobExecution.getId());
-            // todo add logic
+            // todo add some logic
         }
     }
 

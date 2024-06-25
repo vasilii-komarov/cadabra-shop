@@ -3,7 +3,6 @@ package com.epam.komarov.cadabra.shop.controller;
 import com.epam.komarov.cadabra.shop.api.BatchJobApi;
 import com.epam.komarov.cadabra.shop.service.BatchJobService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,7 +25,7 @@ public class BatchJobController implements BatchJobApi {
     }
 
     @Override
-    @GetMapping("/batch/job/startLotteryParticipantsSelection")
+    @PostMapping("/batch/job/startLotteryParticipantsSelection")
     public String startLotteryParticipantsSelection() {
         return batchJobService.startLotteryParticipantsSelection();
     }

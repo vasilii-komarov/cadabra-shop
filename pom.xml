@@ -16,7 +16,7 @@
     <version>${revision}</version>
 
     <name>cadabra-shop</name>
-    <description></description> <!-- TODO description -->
+    <description>Cadabra Shop - Test Task</description>
     <packaging>pom</packaging>
 
     <modules>
