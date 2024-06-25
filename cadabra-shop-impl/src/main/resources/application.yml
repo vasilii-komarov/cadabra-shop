@@ -1,1 +1,23 @@
-spring.application.name: cadabra-shop
+spring:
+  application.name: cadabra-shop
+  datasource:
+    url: jdbc:h2:mem:cadabra-db;MODE=PostgreSQL;
+    username: cadabra-username
+    password: cadabra-password
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console.enabled: true
+  batch:
+    job:
+      enabled: false
+api:
+  users:
+    url: https://jsonplaceholder.typicode.com/users
+
+batch:
+  user-spending:
+    file-path: "/data/spending/user-spending.csv"
+  lottery-participant:
+    spending-threshold: 20.00
