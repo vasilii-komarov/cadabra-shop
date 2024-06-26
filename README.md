@@ -2,7 +2,9 @@
 
 Cadabra company is running a campaign for selecting a weekly winner of a Gift card for their online shoppers.
 
-This service uses Spring Batch Framework to import user information and spending and to select lottery participants and winners.
+This service
+- uses Spring Batch Framework to import user information and spending and to select lottery participants and winners
+- uses in-memory H2 database to store imported data
 
 ## Requirements
 
