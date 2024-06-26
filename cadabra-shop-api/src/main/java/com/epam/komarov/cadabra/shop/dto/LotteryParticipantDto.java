@@ -1,11 +1,11 @@
 package com.epam.komarov.cadabra.shop.dto;
 
 import java.util.UUID;
-import lombok.Builder;
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 @Data
-@Builder
+@Accessors(chain = true)
 public class LotteryParticipantDto {
 
     private Long userId;

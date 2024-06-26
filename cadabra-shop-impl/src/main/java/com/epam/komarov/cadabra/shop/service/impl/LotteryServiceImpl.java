@@ -60,10 +60,9 @@ public class LotteryServiceImpl implements LotteryService {
     }
 
     private LotteryParticipantDto buildLotteryParticipantDto(UserSpendingEntity participant, boolean isWinner) {
-        return LotteryParticipantDto.builder()
-            .userId(participant.getUserId())
-            .giftCardId(isWinner ? assignGiftCard() : null)
-            .build();
+        return new LotteryParticipantDto()
+            .setUserId(participant.getUserId())
+            .setGiftCardId(isWinner ? assignGiftCard() : null);
     }
 
     private UUID assignGiftCard() {

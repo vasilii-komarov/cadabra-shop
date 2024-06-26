@@ -6,12 +6,14 @@ import org.springframework.batch.core.launch.support.TaskExecutorJobLauncher;
 import org.springframework.batch.core.repository.JobRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.core.task.SimpleAsyncTaskExecutor;
 
 @Configuration
 public class BatchConfiguration {
 
     @Bean
+    @Profile({"!test"})
     public JobLauncher asyncJobLauncher(JobRepository jobRepository) throws BatchConfigurationException {
         TaskExecutorJobLauncher jobLauncher = new TaskExecutorJobLauncher();
         jobLauncher.setJobRepository(jobRepository);
